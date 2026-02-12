@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@400;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --primary: #be123c; /* Rose 700 */
+  --primary-hover: #9f1239; /* Rose 800 */
+  --bg-gradient: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+  --text-main: #4c0519; /* Rose 950 */
+  --text-muted: #881337; /* Rose 900 */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(190, 18, 60, 0.05);
+  --card-radius: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Manrope', sans-serif;
+  color: var(--text-main);
+  background: var(--bg-gradient);
+  line-height: 1.6;
+  text-align: center;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.valentine-page {
+  position: relative;
+  width: min(1100px, 92vw);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  z-index: 1;
+}
+
+/* --- Glass Cards --- */
+.hero,
+.timeline,
+.gallery,
+.moment-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: var(--glass-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--glass-shadow);
+  padding: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(190, 18, 60, 0.1);
+  color: var(--primary);
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin: 0 auto 1.5rem;
+  color: var(--text-main);
+  max-width: 24ch;
+}
+
+.hero-text {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 50ch;
+  margin: 0 auto 2.5rem;
+}
+
+.romantic-line {
+  display: inline-block;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.9rem, 4.2vw, 2.8rem);
+  line-height: 1.2;
+  color: var(--primary);
+}
+
+.romantic-line-small {
+  font-size: clamp(1.35rem, 2.7vw, 1.95rem);
+  line-height: 1.25;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.date-form {
+  width: min(520px, 100%);
+  display: grid;
+  gap: 1rem;
+  text-align: left;
+}
+
+.date-form label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  line-height: 1.35;
+}
+
+.date-form input {
+  width: 100%;
+  border: 1px solid rgba(190, 18, 60, 0.15);
+  border-radius: 14px;
+  padding: 0.85rem 0.95rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  min-height: 46px;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.95);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.date-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(190, 18, 60, 0.12);
+}
+
+.plan-form-shell {
+  padding: 1.35rem;
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(255, 241, 242, 0.9));
+  border: 1px solid rgba(190, 18, 60, 0.12);
+  box-shadow: 0 14px 30px rgba(159, 18, 57, 0.12);
+  overflow: visible;
+}
+
+.form-kicker {
+  margin: 0 0 0.15rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--primary);
+  text-align: center;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.45rem;
+  padding-top: 0.1rem;
+}
+
+.date-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.form-actions {
+  justify-content: flex-start;
+  margin-top: 0.25rem;
+}
+
+.save-plan-btn {
+  min-width: 138px;
+}
+
+.back-btn {
+  min-width: 100px;
+}
+
+.plan-summary {
+  width: min(520px, 100%);
+  margin-top: 1rem;
+  border-radius: 16px;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(190, 18, 60, 0.14);
+  box-shadow: 0 10px 26px rgba(76, 5, 25, 0.08);
+}
+
+.plan-summary .hero-text {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* --- Buttons --- */
+button {
+  font-family: 'Manrope', sans-serif;
+  border: none;
+  border-radius: 100px;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:not(.ghost) {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(190, 18, 60, 0.25);
+}
+
+button:not(.ghost):hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(190, 18, 60, 0.35);
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(190, 18, 60, 0.2);
+}
+
+button.ghost:hover {
+  background: rgba(190, 18, 60, 0.05);
+  border-color: var(--primary);
+}
+
+/* --- Moments Grid --- */
+.moments {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.moment-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.moment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(190, 18, 60, 0.1);
+}
+
+.moment-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  margin: 0 0 0.75rem;
+  color: var(--primary);
+}
+
+.moment-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* --- Timeline --- */
+.timeline h2,
+.gallery h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+.timeline-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px dashed rgba(190, 18, 60, 0.15);
+}
+
+.timeline-row:last-child {
+  border-bottom: none;
+}
+
+.timeline-row span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.timeline-row p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* --- Gallery --- */
+.gallery p {
+  text-align: center;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery-item {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* --- Floating Hearts (Subtler) --- */
+.floating-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-hearts span {
+  position: absolute;
+  bottom: -50px;
+  left: calc((var(--i) + 1) * 8%);
+  width: 20px;
+  height: 20px;
+  background: rgba(244, 63, 94, 0.2); /* Much softer */
+  transform: rotate(45deg);
+  animation: float-heart calc(10s + var(--i) * 1s) linear infinite;
+  animation-delay: calc(var(--i) * -1s);
+}
+
+.floating-hearts span::before,
+.floating-hearts span::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.floating-hearts span::before { left: -10px; }
+.floating-hearts span::after { top: -10px; }
+
+@keyframes float-heart {
+  0% { transform: translateY(0) rotate(45deg) scale(0.8); opacity: 0; }
+  20% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) rotate(45deg) scale(1.2); opacity: 0; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .valentine-page {
+    padding: 2rem 1rem;
+    width: 94vw;
+  }
+  
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+  
+  .timeline-row span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .hero,
+  .timeline,
+  .gallery,
+  .moment-card {
+    padding: 1.5rem;
+  }
+
+  .date-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
+
+/* --- Love Letter --- */
+.letter-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.valentine-question-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.valentine-question {
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.success-message {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.success-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.success-text {
+  font-size: 1.5rem;
+}
+
+.success-emojis {
+  font-size: 5rem;
+  animation: pulse 1s infinite;
+}
+
+.letter-footer {
+  margin-top: 3rem;
+  border-top: 1px dashed rgba(190, 18, 60, 0.2);
+  padding-top: 1.5rem;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.scroll-indicator {
+  font-size: 1.5rem;
+  color: var(--primary);
+  animation: bounce 2s infinite;
+  margin: 0 auto;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
