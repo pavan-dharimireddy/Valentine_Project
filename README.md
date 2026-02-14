@@ -2,6 +2,12 @@
 
 A romantic and interactive single-page application built with React & Vite to celebrate Valentine's Day. This project serves as a digital gift, featuring a love letter, a date planner, a memory gallery, and a timeline of your love story.
 
+## 🚀 Live Demos
+
+- **Vercel** --- https://valentine-app-ten-mauve.vercel.app/
+- **Netlify** --- https://valentine-app-pavan.netlify.app/
+- **GitHub Pages** --- https://pavan-dharimireddy.github.io/Valentine_Project/
+
 ## ✨ Features
 
 - **🎵 Background Music**: Integrated audio player with Play/Pause controls that persists across different views.
